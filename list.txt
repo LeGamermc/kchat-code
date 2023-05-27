@@ -1,0 +1,16 @@
+list of program avalible:
+devprog         (linux only)
+fetch           (linux only)
+upkg            (linux only)
+krnlBBS         (linux only)
+krnlhome        (linux only)
+krnlchat        (linux, windows only, updated)
+knet            (linux only)
+krnlchat-server (linux, windows only)
+krnlpaint       (linux only) 
+knote           (linux, windows only)
+upkgtui         (linux only)
+kano            (linux, windows only)
+ktube           (linux, windows only, [open beta])
+upkggui         (linux, windows only)
+

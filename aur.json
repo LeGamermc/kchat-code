@@ -1,0 +1,34 @@
+{
+  "packages": [
+    {
+      "name": "ktube",
+      "file": "ktube.zip",
+      "location": "https://pakage.legamer4.repl.co/aur"
+    },
+    {
+      "name": "upkggui",
+      "file": "upkggui.zip",
+      "location": "https://pakage.legamer4.repl.co/aur"
+    },
+    {
+      "name": "krnlchat",
+      "file": "krnlchat.zip",
+      "location": "https://pakage.legamer4.repl.co/aur"
+    },
+    {
+      "name": "krnlchat-server",
+      "file": "krnlchat-server.zip",
+      "location": "https://pakage.legamer4.repl.co/aur"
+    },
+    {
+      "name": "knote",
+      "file": "knote.zip",
+      "location": "https://pakage.legamer4.repl.co/aur"
+    },
+    {
+      "name": "kano",
+      "file": "kano.zip",
+      "location": "https://pakage.legamer4.repl.co/aur"
+    }
+  ]
+}
