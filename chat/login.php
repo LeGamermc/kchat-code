@@ -2,9 +2,9 @@
 session_start();
 // Database configuration
 $servername = "127.0.0.1";
-$username = "legamer";
-$password = "user";
-$dbname = "kchats";
+$username = "user";
+$password = "pass";
+$dbname = "kchat";
 
 // Create MySQL connection
 $conn = new mysqli($servername, $username, $password, $dbname);
