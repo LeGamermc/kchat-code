@@ -1,18 +1,7 @@
 <?php
 session_start();
 // Database configuration
-$servername = "127.0.0.1";
-$username = "user";
-$password = "pass";
-$dbname = "kchat";
-
-// Create MySQL connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check if connection is successful
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+require_once 'config.php';
 
 $username = $_POST['username'];
 $password_hash = hash('sha256', $_POST['password']);
