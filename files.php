@@ -65,7 +65,7 @@
         <!-- Add your website content here -->
         <div style="text-align: center; padding-top: 20px;">
                 <p style="font-size: 24px;">KNS - Kernel Network Services</p>
-                <p style="font-size: 12px;">This section of the kns web services is in work feel free to check out the discord server for any news -legamer</p>
+                <p style="font-size: 12px;">This section of the kns web services is in work feel free to check out the discord server for any news -legamer (admin)</p>
         </div>
 
 </body>
