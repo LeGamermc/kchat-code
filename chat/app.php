@@ -205,6 +205,24 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                 }
+                    .zoomable-image {
+			cursor: zoom-in;
+			transition: transform 0.3s ease-in-out;
+		    }
+
+		    .zoomable-image.zoomed {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(1.5);
+			z-index: 9999;
+			cursor: zoom-out;
+		    }
+
+		    body.overlay {
+			background-color: rgba(0, 0, 0, 0.8);
+			overflow: hidden;
+		    }
 
 }
     </style>
@@ -236,6 +254,62 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
 </form>
 </body>
 <script>
+function zoomImage(element) {
+    // Create a modal container
+    var modal = document.createElement("div");
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.backgroundColor = "<?php echo ($blur == 0) ? 'rgba(0, 0, 0)' : 'rgba(0, 0, 0, 0.7)'?>";
+    modal.style.backdropFilter = "blur(5px)";
+    modal.style.width = "100%";
+    modal.style.height = "100%";
+    modal.style.transition = "transform 0.1s";
+    modal.style.transform = "scale(0)";
+    modal.style.cursor = "zoom-in";
+    modal.style.display = "flex";
+    modal.style.justifyContent = "center";
+    modal.style.alignItems = "center";
+    modal.style.zIndex = "9999";
+
+    // Create the zoomed-in image element
+    var zoomedImage = document.createElement("img");
+    zoomedImage.src = element.src;
+    zoomedImage.style.maxWidth = "90%";
+    zoomedImage.style.maxHeight = "90%";
+    zoomedImage.style.transition = "transform 0.1s";
+    zoomedImage.style.cursor = "zoom-out";
+
+    // Add the zoomed-in image to the modal container
+    modal.appendChild(zoomedImage);
+
+    // Add the modal container to the document body
+    document.body.appendChild(modal);
+
+    // Apply zoom animation
+    setTimeout(function() {
+        modal.style.transform = "scale(1)";
+        zoomedImage.style.transform = "scale(1)";
+    }, 100);
+
+    // Close the modal when clicking outside the image
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            // Apply unzoom animation
+            modal.style.transform = "scale(0)";
+            zoomedImage.style.transform = "scale(0)";
+
+            // Remove the modal container from the document body
+            setTimeout(function() {
+                document.body.removeChild(modal);
+            }, 300);
+        }
+    });
+}
+
+
+
+
 function adjustImageSize(img) {
   var containerWidth = img.parentElement.offsetWidth;
   var imageWidth = img.naturalWidth;
