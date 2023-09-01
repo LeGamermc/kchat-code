@@ -12,7 +12,7 @@ if (isset($_SESSION['username'])) {
   <title>kchat - login</title>
   <style>
     body {
-      background-image: url("/chat/back.png");
+      background-image: url("back.png");
       background-size: cover;
       min-height:100vh;object-fit:cover;
       color: white;
@@ -71,7 +71,7 @@ if (isset($_SESSION['username'])) {
   </style>
 </head>
 <body style="background-color: black;">
-<a href="../index.html" class="rounded-bottom" style="background-color: #007bff; color: #fff; padding: 8px 16px; margin-left: 5px; text-decoration: none;">Home</a>
+<a href="../index.php" class="rounded-bottom" style="background-color: #007bff; color: #fff; padding: 8px 16px; margin-left: 5px; text-decoration: none;">Home</a>
     <div class="login-form">
 	<center><img src="images/kchat-weblogo.png"></center>
         <h2>Kchat Beta</h2>

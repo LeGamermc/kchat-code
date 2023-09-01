@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <title>Weather - Kernel Network Service</title>
+        <style>
+            #weather-input {
+                width:76px;
+            }
+                .container {
+    		  display: flex;
+    		  flex-direction: column;
+     		  align-items: center;
+     		  justify-content: center;
+    		  width: 300px;
+   		 }
+    
+   	 	.rounded-image {
+     		 border-top-left-radius: 6px;
+     	 	 border-top-right-radius: 6px;
+ 	     	background-position: center;
+  	  }
+    
+    	.rounded-button {
+    	 top: 15px;
+     	 border-bottom-left-radius: 6px;
+     	 border-bottom-right-radius: 6px;
+     	 width: 240px;
+     	 height: 25px;
+     	 background-color: #f2f2f2;
+     	 display: flex;
+     	 align-items: center;
+     	 justify-content: center;
+   	 }
+                /* Style the navigation bar */
+                .topnav {
+                        background-color: transparent;
+                        overflow: hidden;
+                        outline: 1px solid white;
+                      
+                        color: white;
+                        background-color: rgba(51, 51, 51, 0.3);
+                        backdrop-filter: blur(5px);
+                        border-radius: 10px;
+                        margin-bottom: 20px;
+                }
+
+                /* Style the links inside the navigation bar */
+                .topnav a {
+                        float: left;
+                        color: white;
+                        text-align: center;
+                        padding: 14px 16px;
+                        text-decoration: none;
+                        font-size: 17px;
+                        border-radius: 10px;
+                        transition: background-color 0.3s ease;
+                }
+
+                /* Change the color of links on hover */
+                .topnav a:hover {
+                        background-color: rgba(221, 221, 221, 0.5);
+                        color: black;
+                }
+
+                /* Add a color to the active/current link */
+                .topnav .active {
+                        background-color: #4CAF50;
+                        color: white;
+                }
+
+                /* Add background image */
+                body {
+                        background-image: url("wallpaper-8.jpg");
+                        background-size: cover;
+                        min-height:100vh;object-fit:cover;
+                        color: white;
+                        background-color: black;
+                }
+        </style>
+    </head>
+    <body>
+        <!-- Create the navigation bar -->
+        <div class="topnav">
+                <a href="../index.php">Home</a>
+                <a href="https://mutually-present-glider.ngrok-free.app/">MicroPython</a>
+                <a href="/chat/index.php">KChat (beta)</a>
+                <a class="active" href="#">Weather</a>
+                <a href="../spec.php">Server Spec</a>
+                <a href="https://github.com/LeGamermc/kchat-code">Source Code</a>
+                <a href="https://zeno.fm/radio/kernel-radio">Radio</a>
+                <a href="https://discord.gg/hE2HDjeZqQ">Discord</a>
+        </div>
+	<center>
+          <div class="container">
+            <div>
+                <img id="weather-img" style="border-radius: 6;" src="https://wttr.in/Paris_0pq_transparency=200_lang=en.png" alt="Current weather in Paris">
+                <form id="weather-form">
+                    <div class="rounded-button">
+                        <input id="weather-input" style="width: 200px;" type="text" placeholder="Weather in..." aria-label="Weather in...">
+                        <div class="input-group-append">
+                            <button id="weather-btn" class="btn btn-primary" type="button">OK</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="statusContainer">
+        <p id="statusText">wttr.in Server: Checking...</p>
+        </div>   
+        </center>
+        <script defer src="assets/js/main.js"></script>
+        <script>
+        const statusText = document.getElementById("statusText");
+
+        function checkServerStatus() {
+            fetch("https://wttr.in")
+                .then(response => {
+                    if (response.ok) {
+                        statusText.textContent = "wttr.in Server: Online";
+                        statusText.style.color = "green";
+                    } else {
+                        statusText.textContent = "wttr.in Server: Offline";
+                        statusText.style.color = "red";
+                    }
+                })
+                .catch(error => {
+                    statusText.textContent = "Error checking server status";
+                    statusText.style.color = "red";
+                });
+        }
+
+        // Check server status when the page loads and every 10 seconds
+        checkServerStatus();
+    </script>
+    </body>
+</html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 27 mai 2023 à 13:50
+-- Généré le : ven. 01 sep. 2023 à 12:21
 -- Version du serveur :  10.5.19-MariaDB-0+deb11u2
 -- Version de PHP : 7.4.33
 
@@ -67,7 +67,7 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `username`, `message`, `timestamp`) VALUES
-(1, 'LeGamer', 'e', '2023-04-20 18:27:45');
+(1, 'LeGamer', 'e', '2023-04-20 18:27:45'),
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `online`, `nudge`, `background`, `theme`, `blur`) VALUES
-(1, 'Admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 1, 1, 'back.png', 0, 1);
+(1, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 1, 1, 'images/wp/wallpaper-8.jpg', 0, 1),
 
 --
 -- Index pour les tables déchargées
@@ -130,13 +130,13 @@ ALTER TABLE `background_images`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=579;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=694;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

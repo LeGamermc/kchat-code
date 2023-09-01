@@ -5,7 +5,6 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-// Database configuration
 require_once 'config.php';
 
 // Handle form submission
@@ -96,7 +95,7 @@ $conn->close();
         #menuButton {
             position: absolute;
             top: 10px;
-            left: 270px;
+            left: calc(265px + 5px);
         }
 
         #backgroundButton {
@@ -104,7 +103,6 @@ $conn->close();
             top: 10px;
             left: 110px;
         }
-
         #themeButton {
             position: absolute;
             top: 10px;

@@ -1,6 +1,7 @@
 <?php                                                                                                                                                                                    
-// Connect to database                                                                                                                                                                   
-require_once 'config.php';                                                                                                                                                                                                                            
+// Connect to database                                                                                                                                                                                                                                                                                                                                                           
+require_once 'config.php';
+    
 $username = $_SESSION['username'];
 $query = "SELECT blur FROM users WHERE username = ?";
 $stmt = $conn->prepare($query);

@@ -8,9 +8,9 @@ if (!isset($_SESSION['username'])) {
 
 // Connect to database
 $db_host = '127.0.0.1';
-$db_name = 'kchat';
-$db_user = 'user';
-$db_pass = 'pass';
+$db_name = 'kchats';
+$db_user = 'legamer';
+$db_pass = 'user';
 
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 

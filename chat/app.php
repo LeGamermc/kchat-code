@@ -66,8 +66,8 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
     <meta charset="utf-8">
     <style>
         .white-text {
-      	    color: #fff; /* Set the text color to white */
-    	}
+            color: #fff; /* Set the text color to white */
+        }
         body {
             font-family: sans-serif;
             background-image: url("<?php echo $background_image; ?>");
@@ -114,24 +114,24 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
             box-sizing: border-box;
         }
         .dot {
- 	    display: inline-block;
-  	    width: 19px;
+        display: inline-block;
+        width: 19px;
             height: 19px;
             border-radius: <?php echo ($theme == 1) ? '0' : '5px'; ?>;
             margin-right: 5px;
         }
 
         .green {
-	   background-image: url("images/statuson.png");
-	   background-repeat: no-repeat;
-	   background-size: cover;
+       background-image: url("images/statuson.png");
+       background-repeat: no-repeat;
+       background-size: cover;
         }
 
-	.yellow { 
+    .yellow { 
            background-image: url("images/statusina.png");
            background-repeat: no-repeat;
            background-size: cover;
-	}
+    }
 
         .red { 
            background-image: url("images/statusoff.png");
@@ -141,64 +141,67 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
         #loader {
             background-color: <?php echo ($blur== 0) ? 'rgba(0, 0, 0);' : 'rgba(0, 0, 0, 0.7); '; ?>; 
             backdrop-filter: blur(5px); 
-	    position: fixed;
-	    top: 0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
-	    z-index: 9999;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         }
-	.btn {
-		padding: 0px;
-		cursor: pointer;
-		background-color: transparent;
+    .btn {
+        padding: 0px;
+        cursor: pointer;
+        background-color: transparent;
                 border: none;
-	}
+    }
 
-	/* Submenu style */
-			/* Button style */
-		.btn {
-		        padding: 0px 0px;
-			margin-left: 10px;
-		}
+    /* Submenu style */
+            /* Button style */
+        .btn {
+                padding: 0px 0px;
+            margin-left: 10px;
+        }
 
-		/* Submenu style */
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
+        /* Submenu style */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-		.dropdown-content {
-			display: none;
-			width: 90px;
-	                height: 30px;
-			backdrop-filter: <?php echo ($blur== 0) ? '0' : 'blur(5px); '; ?>;
-			position: absolute;
-			outline: 1px solid white;
-			z-index: 1;
-		}
+        .dropdown-content {
+            display: none;
+            align-items: center;
+            white-space: nowrap;
+            justify-content: space-between;
+            width: auto;
+            height: auto;
+            backdrop-filter: <?php echo ($blur== 0) ? '0' : 'blur(5px); '; ?>;
+            position: absolute;
+            outline: 1px solid white;
+            z-index: 1;
+        }
 
-		.dropdown:hover .dropdown-content {
-			display: block;
-			background-color: <?php echo ($blur== 0) ? 'rgba(51, 51, 51);' : 'rgba(51, 51, 51, 0.4); '; ?>;
-			backdrop-filter: blur(5px);  
-			color: #fff; 
-			padding: 20px 20px; 
-			border-radius: <?php echo ($theme == 1) ? '0' : '7px'; ?>;
-			margin-left: 10px; 
-			text-decoration: none;
-		}
-		.rounded-left {
-        	    border-top-left-radius: 0;
-        	    border-top-right-radius: <?php echo ($theme == 1) ? '0' : '6px'; ?>;
-        	    border-bottom-left-radius: 0;
-        	    border-bottom-right-radius: 0;
-        	    outline: 1px solid white;
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: <?php echo ($blur== 0) ? 'rgba(51, 51, 51);' : 'rgba(51, 51, 51, 0.4); '; ?>;
+            backdrop-filter: blur(5px);  
+            color: #fff; 
+            padding: 20px 20px; 
+            border-radius: <?php echo ($theme == 1) ? '0' : '7px'; ?>;
+            margin-left: 10px; 
+            text-decoration: none;
+        }
+        .rounded-left {
+                border-top-left-radius: 0;
+                border-top-right-radius: <?php echo ($theme == 1) ? '0' : '6px'; ?>;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                outline: 1px solid white;
 
-        	}
+            }
                 .rounded-right {
                     border-top-left-radius: <?php echo ($theme == 1) ? '0' : '6px'; ?>;
                     border-top-right-radius: 0;
@@ -206,23 +209,23 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
                     border-bottom-right-radius: 0;
                 }
                     .zoomable-image {
-			cursor: zoom-in;
-			transition: transform 0.3s ease-in-out;
-		    }
+            cursor: zoom-in;
+            transition: transform 0.3s ease-in-out;
+            }
 
-		    .zoomable-image.zoomed {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%) scale(1.5);
-			z-index: 9999;
-			cursor: zoom-out;
-		    }
+            .zoomable-image.zoomed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5);
+            z-index: 9999;
+            cursor: zoom-out;
+            }
 
-		    body.overlay {
-			background-color: rgba(0, 0, 0, 0.8);
-			overflow: hidden;
-		    }
+            body.overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            }
 
 }
     </style>
@@ -234,14 +237,14 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
 <div style="display: flex; align-items: center;">
     <p style="background-color: <?php echo ($blur== 0) ? 'rgba(51, 51, 51);' : 'rgba(51, 51, 51, 0.4); '; ?>; backdrop-filter: blur(5px); color: #fff; padding: 8px 16px; outline: 1px solid white; border-radius: <?php echo ($theme == 1) ? '0' : '4px'; ?>; margin-left: 10px; text-decoration: none;">Welcome, <?php echo $_SESSION['username']; ?>!</p>
     <a href="logout.php" style="margin-left: 10px;"><img src="images/logout-btn.png" style="width: 38px; height: 38px; border-radius: <?php echo ($theme == 1) ? '0' : '4px'; ?>; outline: 1px solid white;"></a>
-    	<div class="dropdown">
-		<button class="btn"><img src="images/status-changer-btn.png" style="width: 38px; height: 38px; border-radius: <?php echo ($theme == 1) ? '0' : '4px'; ?>; outline: 1px solid white;"></button>
-		<div class="dropdown-content">
-                        <a style="cursor: pointer;" onclick="fetchPage(event, 'active.php')"><img src="images/onbtn.png"></a>
-			<a style="cursor: pointer;" onclick="fetchPage(event, 'inactive.php')"><img src="images/inabtn.png"></a>
-			<a style="cursor: pointer;" onclick="fetchPage(event, 'off.php')"><img src="images/offbtn.png"></a>
-		</div>
-	</div>
+        <div class="dropdown">
+        <button class="btn"><img src="images/status-changer-btn.png" style="width: 38px; height: 38px; border-radius: <?php echo ($theme == 1) ? '0' : '4px'; ?>; outline: 1px solid white;"></button>
+        <div class="dropdown-content">
+            <a style="cursor: pointer;" onclick="fetchPage(event, 'active.php')"><img src="images/onbtn.png"></a>
+            <a style="cursor: pointer;" onclick="fetchPage(event, 'inactive.php')"><img src="images/inabtn.png"></a>
+            <a style="cursor: pointer;" onclick="fetchPage(event, 'off.php')"><img src="images/offbtn.png"></a>
+        </div>
+    </div>
     <a href="themes.php" style="margin-left: 10px;"><img src="images/themeset_btn2.png" style="width: 38px; outline: 1px solid white; height: 38px; border-radius: <?php echo ($theme == 1) ? '0' : '4px'; ?>;"></a>
 </div>
 <div style="display: flex;">
@@ -254,6 +257,15 @@ if ($_SESSION['username'] === 'KosmoTheProtogen') {
 </form>
 </body>
 <script>
+        function quitterPage(event) {
+                    var confirmationMessage = "Êtes-vous sûr de vouloir quitter cette page ? Vos modifications non sauvegardées seront perdues.";
+
+                                (event || window.event).returnValue = confirmationMessage;
+                                            fetchPage(event, 'stop.php')
+                                            return confirmationMessage;
+                                                    }
+
+window.addEventListener("beforeunload", quitterPage);
 function zoomImage(element) {
     // Create a modal container
     var modal = document.createElement("div");
